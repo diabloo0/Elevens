@@ -16,6 +16,7 @@ public class CardTester {
 		System.out.println("card 1 suit: "+one.suit());
 		System.out.println("card 1 rank: "+one.rank());
 		System.out.println("card 1 point: "+one.pointValue());
+		assert one.pointValue()==1 : "card one value incorrect";
 		//card 2
 		System.out.println("=====Card 2 test=====");
 		Card two=new Card("ace","spades",1);
@@ -23,6 +24,7 @@ public class CardTester {
 		System.out.println("card 2 rank: "+two.rank());
 		System.out.println("card 2 point: "+two.pointValue());
 		System.out.println("card 1 matchs card 2: "+ one.matches(two));
+		assert one.matches(two): "cards don't match";
 		//card 3
 		System.out.println("=====Card 3 test=====");
 		Card three=new Card("Jack","hearts",11);

@@ -36,7 +36,7 @@ public class Deck {
                 cards.add(new Card(ranks[j], suitString, values[j]));            }
 	} 
         // init the size var
-        this.size=cards.size();
+       this.shuffle();
 	}	
 	/**
 	 * Determines if this deck is empty (no undealt cards).
@@ -62,6 +62,17 @@ public class Deck {
 	 */
 	public void shuffle() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+		
+		//set up a loop from the end to beginning(not including 0)
+		for(int i=cards.size()-1; i>=0;i--) {
+			//draw a random number from 0--counter
+			int r=(int)(Math.random()*(i));
+			//three-part swap with counter and random
+			Card temp=cards.get(r);		
+			cards.set(r,cards.get(i));
+			cards.set(i,temp);
+		}
+		this.size = cards.size();
 	}
 
 	/**
